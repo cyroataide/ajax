@@ -8,7 +8,18 @@
     <script src="jquery.js"></script>
     <script>
     $(function(){
-
+        $.ajax({
+            url:'texto.txt',
+            success:function(response){
+                //console.log(response);
+                //alert('encontou!!!!');
+                //Inserindo o conteudo do response após a tag <h1>
+                $('h1').after('<h2>'+response+'</h2>')
+            },
+            error:function(){
+                alert('Ocorreu um erro!!!')
+            } //o ultimo nunca vai virgula
+        });
     });
     </script>
 </head>
